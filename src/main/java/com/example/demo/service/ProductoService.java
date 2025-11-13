@@ -1,5 +1,55 @@
 package com.example.demo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.demo.repository.ProductoRepository;
+import java.util.List;
+import com.example.demo.model.Producto;
+
+@Service
 public class ProductoService {
 
+    @Autowired
+    private ProductoRepository productoRepository;
+
+    public List<Producto> getAllProducts(){
+        return productoRepository.findAll();
+    }
+
+    public Producto getProductById(Integer id) {
+        return productoRepository.findById(id).orElse(null);
+    }
+
+    public Producto partialUpdate(Producto producto){
+        Producto existingproducto = productoRepository.findById(producto.getId()).orElse(null);
+        if (existingproducto != null) {
+            if (producto.getNombre() != null) {
+                existingproducto.setNombre(producto.getNombre());
+            }
+
+            if(producto.getDescripcion() != null) {
+                existingproducto.setDescripcion(producto.getDescripcion());
+            }
+
+            if(producto.getPrecio() != null) {
+                existingproducto.setPrecio(producto.getPrecio());
+            }
+
+            if(producto.getStock() != null) {
+                existingproducto.setStock(producto.getStock());
+            }
+
+            return productoRepository.save(existingproducto);
+        }
+        return null;
+    }
+    
+
+    public  Producto saveProducto(Producto producto) {
+        return productoRepository.save(producto);
+    }
+
+    public void deleteProducto(Integer id) {
+        productoRepository.deleteById(id);
+    }
 }

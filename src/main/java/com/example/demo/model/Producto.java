@@ -5,9 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -30,5 +34,15 @@ public class Producto {
 
     @Column(name = "stock", nullable = false)
     private Integer stock;
+
+    @ManyToMany
+    Set<Categoria> Categorias;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "producto_categorias", 
+        joinColumns = @JoinColumn(name = "id_producto"), 
+        inverseJoinColumns = @JoinColumn(name = "id_categoria"))
+    Set<Categoria> categoriasProducto;
 
 }
