@@ -12,9 +12,9 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI(){
         return new OpenAPI().info(
             new Info()
-            .title("API demo")
+            .title("API PseTienda")
             .version("0.1")
-            .description("Api de repaso")
+            .description("API para la gestión de una tienda en línea.")
         );
     }
 
