@@ -9,6 +9,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 
 @Data
@@ -25,5 +28,6 @@ public class Categoria {
     private String nombreCategoria;
 
     @ManyToMany(mappedBy = "categorias")
-    Set<Producto> productos;
+    @JsonIgnore
+    private Set<Producto> productos;
 }

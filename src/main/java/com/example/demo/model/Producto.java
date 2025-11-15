@@ -13,6 +13,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -40,6 +42,7 @@ public class Producto {
         name = "producto_categorias", 
         joinColumns = @JoinColumn(name = "id_producto"), 
         inverseJoinColumns = @JoinColumn(name = "id_categoria"))
-    Set<Categoria> categorias;
+    @JsonIgnore
+    private Set<Categoria> categorias;
 
 }
