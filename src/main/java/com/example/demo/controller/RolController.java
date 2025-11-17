@@ -8,7 +8,7 @@ import com.example.demo.model.Rol;
 import com.example.demo.service.RolService;
 
 @RestController
-@RequestMapping("api/roles")
+@RequestMapping("api/v1/roles")
 public class RolController {
     @Autowired
     private RolService rolService;

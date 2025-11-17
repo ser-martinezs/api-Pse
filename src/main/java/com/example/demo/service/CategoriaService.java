@@ -3,10 +3,12 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.repository.CategoriaRepository;
+import jakarta.transaction.Transactional;
 import com.example.demo.model.Categoria;
 import java.util.List;
 
 @Service
+@Transactional
 public class CategoriaService {
     @Autowired
     private CategoriaRepository categoriaRepository;

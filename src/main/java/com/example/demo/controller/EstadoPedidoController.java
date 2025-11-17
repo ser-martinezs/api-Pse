@@ -8,7 +8,7 @@ import com.example.demo.model.EstadoPedido;
 import com.example.demo.service.EstadoPedidoService;
 
 @RestController
-@RequestMapping("api/estadopedidos")
+@RequestMapping("api/v1/estadopedidos")
 public class EstadoPedidoController {
     @Autowired
     private EstadoPedidoService estadoPedidoService;

@@ -8,7 +8,7 @@ import com.example.demo.model.DetallePedido;
 import com.example.demo.service.DetallePedidoService;
 
 @RestController
-@RequestMapping("api/detallepedidos")
+@RequestMapping("api/v1/detallepedidos")
 public class DetallePedidoController {
     @Autowired
     private DetallePedidoService detallePedidoService;

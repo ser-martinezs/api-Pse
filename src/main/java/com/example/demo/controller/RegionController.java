@@ -8,7 +8,7 @@ import com.example.demo.model.Region;
 import com.example.demo.service.RegionService;
 
 @RestController
-@RequestMapping("api/regiones")
+@RequestMapping("api/v1/regiones")
 public class RegionController {
     @Autowired
     private RegionService regionService;

@@ -3,10 +3,14 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.repository.RegionRepository;
+
+import jakarta.transaction.Transactional;
+
 import com.example.demo.model.Region;
 import java.util.List;
 
 @Service
+@Transactional
 public class RegionService {
     @Autowired
     private RegionRepository regionRepository;

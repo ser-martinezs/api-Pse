@@ -8,11 +8,9 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Column;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Data
 @AllArgsConstructor
@@ -29,5 +27,6 @@ public class Categoria {
 
     @ManyToMany(mappedBy = "categorias")
     @JsonIgnore
-    private Set<Producto> productos;
+    private List<Producto> productos;
+
 }

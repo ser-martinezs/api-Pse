@@ -8,7 +8,7 @@ import com.example.demo.model.Comuna;
 import com.example.demo.service.ComunaService;
 
 @RestController
-@RequestMapping("api/comunas")
+@RequestMapping("api/v1/comunas")
 public class ComunaController {
     @Autowired
     private ComunaService comunaService;

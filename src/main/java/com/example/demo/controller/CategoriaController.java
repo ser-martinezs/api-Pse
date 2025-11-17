@@ -8,7 +8,7 @@ import com.example.demo.model.Categoria;
 import com.example.demo.service.CategoriaService;
 
 @RestController
-@RequestMapping("api/categorias")
+@RequestMapping("api/v1/categorias")
 public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;

@@ -11,9 +11,7 @@ import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -39,10 +37,9 @@ public class Producto {
     
     @ManyToMany
     @JoinTable(
-        name = "producto_categorias", 
-        joinColumns = @JoinColumn(name = "id_producto"), 
-        inverseJoinColumns = @JoinColumn(name = "id_categoria"))
-    @JsonIgnore
-    private Set<Categoria> categorias;
-
+        name = "producto_categoria",
+        joinColumns = @JoinColumn(name = "producto_id"),
+        inverseJoinColumns = @JoinColumn(name = "categoria_id")
+    )
+    private List<Categoria> categorias;
 }

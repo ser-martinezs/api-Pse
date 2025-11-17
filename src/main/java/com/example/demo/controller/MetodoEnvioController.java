@@ -8,7 +8,7 @@ import com.example.demo.model.MetodoEnvio;
 import com.example.demo.service.MetodoEnvioService;
 
 @RestController
-@RequestMapping("api/metodoenvios")
+@RequestMapping("api/v1/metodoenvios")
 public class MetodoEnvioController {
     @Autowired
     private MetodoEnvioService metodoEnvioService;

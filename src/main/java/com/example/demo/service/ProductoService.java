@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.repository.ProductoRepository;
 import java.util.List;
+import jakarta.transaction.Transactional;
 import com.example.demo.model.Producto;
 
 @Service
+@Transactional
 public class ProductoService {
 
     @Autowired
@@ -43,7 +45,6 @@ public class ProductoService {
         }
         return null;
     }
-    
 
     public  Producto saveProducto(Producto producto) {
         return productoRepository.save(producto);
