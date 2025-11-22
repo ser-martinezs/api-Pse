@@ -3,7 +3,6 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.repository.ProductoRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 import jakarta.transaction.Transactional;
@@ -46,6 +45,10 @@ public class ProductoService {
 
             if(producto.getStock() != null) {
                 existingproducto.setStock(producto.getStock());
+            }
+
+            if(producto.getCategorias() != null) {
+                existingproducto.setCategorias(producto.getCategorias());
             }
 
             return productoRepository.save(existingproducto);

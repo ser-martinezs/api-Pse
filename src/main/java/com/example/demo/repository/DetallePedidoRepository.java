@@ -6,4 +6,6 @@ import com.example.demo.model.DetallePedido;
 
 @Repository
 public interface DetallePedidoRepository extends JpaRepository<DetallePedido,Integer>{
+
+    void deleteByPedidoId(Integer pedidoId);    
 }

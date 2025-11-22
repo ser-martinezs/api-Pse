@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.example.demo.repository.ClienteRepository;
+import com.example.demo.repository.PedidoRepository;
 import jakarta.transaction.Transactional;
 import com.example.demo.model.Cliente;
 import java.util.List;
@@ -15,7 +16,13 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     @Autowired
+    private PedidoRepository pedidoRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private PedidoService pedidoService;
 
     public List<Cliente> getAllClientes(){
         return clienteRepository.findAll();
@@ -48,6 +55,7 @@ public class ClienteService {
     }
 
     public void deleteCliente(Integer id) {
+        pedidoService.deletePedido(pedidoRepository.findByClienteId(id).getId());
         clienteRepository.deleteById(id);
     }
 }

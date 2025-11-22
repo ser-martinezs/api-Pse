@@ -8,7 +8,7 @@ import com.example.demo.model.MetodoPago;
 import com.example.demo.service.MetodoPagoService;
 
 @RestController
-@RequestMapping("api/v1/metodopagos")
+@RequestMapping("api/v1/metodos-pago")
 public class MetodoPagoController {
     @Autowired
     private MetodoPagoService metodoPagoService;
